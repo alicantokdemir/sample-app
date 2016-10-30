@@ -1,31 +1,39 @@
 <div class="row">
 
-    <div class="container-fluid">
-        <a ui-sref="^.list()" class="btn btn-default">Articles List</a>
+	<div class="container-fluid">
+		<div class="marketing">
+			<div class="row">
+				<div class="col-sm-12">
+					<a ui-sref="^.list()" class="btn btn-default">Articles List</a>
 
-        <h2>{{articleView.current.fullTitle}}</h2>
+					<h2 class="text-center">{{articleView.current.fullTitle}}</h2>
 
-        <hr>
+					<hr>
 
-        <p><span class="glyphicon glyphicon-time"></span> Posted on {{articleView.current.createdAt | date : shortDate}}</p>
+					<p><span class="glyphicon glyphicon-time"></span> Posted on {{articleView.current.createdAt | date : shortDate}}</p>
 
-        <hr>
+					<hr>
+					<blockquote>
+						<p class="lead">{{articleView.current.summary}}</p>
+					</blockquote>
+					<p class="text-justify">{{articleView.current.fullText}}</p>
 
-        <p class="lead">{{articleView.current.summary}}</p>
-        <p>{{articleView.current.fullText}}</p>
+					<hr>
 
-        <hr>
+					<div class="well well-sm">
+						<h4>
+							Share:
+						</h4>
 
-        <h4>
-            Share:
-        </h4>
-
-        <p>
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{articleUrl}}&t={{articleView.current.shortTitle}}" class="btn btn-primary">Facebook</a>
-            <a href="https://twitter.com/intent/tweet?source={{articleUrl}}&text={{articleView.current.shortTitle}}" class="btn btn-info">twitter</a>
-            <a href="https://plus.google.com/share?url={{articleUrl}}" class="btn btn-danger">g+</a>
-        </p>
-
-    </div>
+						<p>
+							<a href="https://www.facebook.com/sharer/sharer.php?u={{articleUrl}}&t={{articleView.current.shortTitle}}" class="btn btn-primary">Facebook</a>
+							<a href="https://twitter.com/intent/tweet?source={{articleUrl}}&text={{articleView.current.shortTitle}}" class="btn btn-info">twitter</a>
+							<a href="https://plus.google.com/share?url={{articleUrl}}" class="btn btn-danger">g+</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </div>
