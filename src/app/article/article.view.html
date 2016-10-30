@@ -19,18 +19,7 @@
 					<p class="text-justify">{{articleView.current.fullText}}</p>
 
 					<hr>
-
-					<div class="well well-sm">
-						<h4>
-							Share:
-						</h4>
-
-						<p>
-							<a href="https://www.facebook.com/sharer/sharer.php?u={{articleUrl}}&t={{articleView.current.shortTitle}}" class="btn btn-primary">Facebook</a>
-							<a href="https://twitter.com/intent/tweet?source={{articleUrl}}&text={{articleView.current.shortTitle}}" class="btn btn-info">twitter</a>
-							<a href="https://plus.google.com/share?url={{articleUrl}}" class="btn btn-danger">g+</a>
-						</p>
-					</div>
+					<share title="articleView.current.fullTitle" url="articleView.articleUrl"></share>
 				</div>
 			</div>
 		</div>

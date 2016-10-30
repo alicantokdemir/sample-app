@@ -26,8 +26,9 @@
     }
 
     /** @ngInject */
-    function ArticleViewController($state, Article) {
+    function ArticleViewController($state, Article, $location) {
         var vm = this;
+        vm.articleUrl = $location.absUrl();
         Article.findById($state.params.id).then(function (res) {
             vm.current = res;
         });
@@ -39,7 +40,7 @@
         if ($state.params.id) {
 
             vm.editMode = true;
-            console.log( Article);
+            console.log(Article);
             Article.findById($state.params.id).then(function (res) {
                 vm.current = res;
             });
@@ -52,3 +53,15 @@
         };
     }
 })();
+angular
+    .module('sample')
+    .directive('share', function () {
+        return {
+            scope: {
+                title: '=',
+                url: '=',
+            },
+            templateUrl: 'app/article/share.directive.html'
+        }
+
+    });
