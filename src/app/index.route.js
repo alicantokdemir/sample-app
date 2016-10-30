@@ -77,7 +77,10 @@
             })
 
             .state('articles.edit', {
-                url: '/edit/:id',
+                url: '/edit/:titleSlug',
+                params: {
+                    id: ''
+                },
                 templateUrl: 'app/article/article.edit.html',
                 controller: 'ArticleEditController',
                 controllerAs: 'article'
